@@ -1,4 +1,5 @@
 import random as rnd
+import argparse
 
 def generateWesternishName(markovChains):
 	if(rnd.random()<0.8):
@@ -21,7 +22,7 @@ def generateJapaneseishName():
 
 def generateRandomName(markovChains, gadgetType = None):
 	buzzwords = ['Quantum', 'Dynamic', 'Static', 'Entangled', 'Nano', 'Relativistic', 'Mega', 'Super', 'Celestial', 'Ridgid', 'Negative', 'Frictionless', 'Superconducting', 'Particle', 'Nuclear', 'Evolutionary', 'Ultra', 'Hyper-G', 'Low-Gravity', 'Interstellar', 'Viscous', 'Inviscous', 'Escalating','Timeless','Hyper', 'Dangerous','Sparkly', 'Boiling', 'Bending', 'Torsion', 'Non-linear', 'Linear', 'Parabolic', 'Hyperbolic', 'Elliptical', 'Conductive', 'Cyclical', 'Sustainable', 'Caffeine-free', 'Deep', 'Improbability', 'Infinite']
-	if gadgetType==None:
+	if gadgetType==None or gadgetType == "":
 		gadget = ['Gyro', 'Thruster', 'Rocket']
 	else:
 		gadget = [str(gadgetType)]
@@ -204,6 +205,17 @@ def generateFromMarkovChain(markovChains):
 	return name
 
 if __name__ == '__main__':
+	parser = argparse.ArgumentParser(description="Generates sci-fi sounding names for made up technoligies. E.g. Relativistic Paper Engine, Nystrom-Euler Gun and Wataki-Lovelace Neutron Rocket")
+	parser.add_argument('-n', '--num_names',
+								type=int, 
+							  	default=15,
+							  	help='Number of generated names')
+
+	parser.add_argument('-g', '--gadget_type', 
+							  	default="Engine",
+							  	help='Type of gadget, e.g. Relativistic Paper >>Engine<<. Use -g "" for random gadget type.')
+
+	args = parser.parse_args()
 	m =  trainMarkovChain()
-	for i in range(15):
-		print generateRandomName(m, 'Engine')
+	for i in range(args.num_names):
+		print generateRandomName(m, args.gadget_type)
