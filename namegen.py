@@ -20,7 +20,7 @@ def generateJapaneseishName():
 	return s
 
 def generateRandomName(markovChains, gadgetType = None):
-	buzzwords = ['Quantum', 'Dynamic', 'Static', 'Entangled', 'Nano', 'Relativistic', 'Mega', 'Super', 'Celestial', 'Ridgid', 'Negative', 'Frictionless', 'Superconducting', 'Particle', 'Nuclear', 'Evolutionary', 'Ultra', 'Hyper-G', 'Low-Gravity', 'Interstellar', 'Viscous', 'Inviscous', 'Escalating','Timeless','Hyper', 'Dangerous','Sparkly', 'Boiling', 'Bending', 'Torsion', 'Non-linear', 'Linear', 'Parabolic', 'Hyperbolic', 'Elliptical', 'Conductive', 'Cyclical', 'Sustainable', 'Caffene-free', 'Deep', 'Improbability', 'Infinite']
+	buzzwords = ['Quantum', 'Dynamic', 'Static', 'Entangled', 'Nano', 'Relativistic', 'Mega', 'Super', 'Celestial', 'Ridgid', 'Negative', 'Frictionless', 'Superconducting', 'Particle', 'Nuclear', 'Evolutionary', 'Ultra', 'Hyper-G', 'Low-Gravity', 'Interstellar', 'Viscous', 'Inviscous', 'Escalating','Timeless','Hyper', 'Dangerous','Sparkly', 'Boiling', 'Bending', 'Torsion', 'Non-linear', 'Linear', 'Parabolic', 'Hyperbolic', 'Elliptical', 'Conductive', 'Cyclical', 'Sustainable', 'Caffeine-free', 'Deep', 'Improbability', 'Infinite']
 	if gadgetType==None:
 		gadget = ['Gyro', 'Thruster', 'Rocket']
 	else:
