@@ -13,10 +13,9 @@ def generateJapaneseishName():
 	l = rnd.randint(2,4)*2
 	for i in range(l):
 		if(i%2 == 0):
-			tmp = rnd.randint(0, len(c)-1)
-			s += c[tmp]
+			s += rnd.choice(c)
 		else:
-			s += v[rnd.randint(0, len(v)-1)]
+			s += rnd.choice(v)
 	s = s.capitalize()
 	return s
 
@@ -45,9 +44,9 @@ def generateRandomName(markovChains, gadgetType = None):
 			name += s
 			if(inv!=inventors-1):
 				name += '-'
-		name = buzzwords[rnd.randint(0, len(buzzwords)-1)]+' '+name+' '+gadget[rnd.randint(0, len(gadget)-1)]
+		name = rnd.choice(buzzwords) + ' ' + name +' ' + rnd.choice(gadget)
 	else:
-		name = buzzwords[rnd.randint(0, len(buzzwords)-1)]+' '+nouns[rnd.randint(0, len(nouns)-1)]+' '+gadget[rnd.randint(0, len(gadget)-1)]
+		name = rnd.choice(buzzwords) + ' ' + rnd.choice(nouns) + ' ' + rnd.choice(gadget)
 	return name
 
 def trainMarkovChain():
